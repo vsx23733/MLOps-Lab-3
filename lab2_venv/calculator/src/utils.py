@@ -77,7 +77,7 @@ def power(x1: float, x2: float) -> float:
     Returns:
         float: The result of raising x to the power of y.
     """
-    if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+    if not isinstance(x1, (int, float)) or not isinstance(x2, (int, float)):
         return None
     else:
         return x1 ** x2
