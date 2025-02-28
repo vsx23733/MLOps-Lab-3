@@ -67,17 +67,17 @@ def divide(x1: float, x2: float) -> float:
         else:
             return x1 / x2
         
-def power(x: float, y: float) -> float:
+def power(x: float, z: float) -> float:
     """
     Raise x to the power of y.
 
     Parameters:
         x (float): The base number.
-        y (float): The exponent.
+        z (float): The exponent.
     Returns:
         float: The result of raising x to the power of y.
     """
-    if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+    if not isinstance(x, (int, float)) or not isinstance(z, (int, float)):
         return None
     else:
-        return x ** y
+        return x ** z
