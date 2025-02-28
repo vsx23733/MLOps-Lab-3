@@ -7,16 +7,16 @@ import os, sys
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
 sys.path.insert(0, project_root)
 
-from .src.utils import add, subtract, multiply, divide
+from .src.utils import add, subtract, multiply, divide, power
 
 class TestCalculator:
     # Testing the add
     def test_effective_addition(self):
-        assert 4 == add(2, 2), "The addition is not correct"
+        assert 4 == add([2, 2]), "The addition is not correct"
 
     
     def test_addition_failure(self):
-        assert 5 != add('a', 3), "The input must be a number"
+        assert 5 != add(['a', 3]), "The input must be a number"
 
     # Testing the subtract
     def test_effective_subtraction(self):
@@ -28,7 +28,7 @@ class TestCalculator:
     
     # Testing the multiply
     def test_effective_multiplication(self):
-        assert 8 == multiply(4, 2)
+        assert 8 == multiply([4, 2])
 
 
     def test_multiplication_failure(self):
@@ -41,4 +41,11 @@ class TestCalculator:
 
     def test_division_failure(self):
         assert 2 != divide('a', 3), "The input must be a number"
+
+    # Testing the power
+    def test_effective_power(self):
+        assert 8 == power(2, 3)
+    
+    def test_power_failure(self):
+        assert 8 != power('a', 3), "The input must be a number"
     

@@ -7,10 +7,13 @@ def add(*args) -> float:
     Returns:
         float: The sum of the two numbers.
     """
+    result = 0
     for arg in args:
-        if not isinstance(arg, (int, float)):
+        if isinstance(arg, (int, float)):
+            result += arg
+        else:
             return None
-    return sum(args)
+    return result
 
 
 def subtract(x1: float, x2: float) -> float:
@@ -45,7 +48,7 @@ def multiply(*args) -> float:
     product = 1
     for n in args:
         product *= n
-        
+
 
 def divide(x1: float, x2: float) -> float:
     """
@@ -63,3 +66,18 @@ def divide(x1: float, x2: float) -> float:
             return None
         else:
             return x1 / x2
+        
+def power(x: float, y: float) -> float:
+    """
+    Raise x to the power of y.
+
+    Parameters:
+        x (float): The base number.
+        y (float): The exponent.
+    Returns:
+        float: The result of raising x to the power of y.
+    """
+    if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+        return None
+    else:
+        return x ** y

@@ -1,4 +1,4 @@
-import utils
+from .utils import add, subtract, multiply, divide, power
 def ask_user_input():
     """
     This function asks the user to input two numbers and an operator
@@ -43,13 +43,13 @@ def calculator():
     numbers, operator = ask_user_input()
     result = 0
     if operator == "+":
-        result = utils.add(numbers)
+        result = add(numbers)
     elif operator == "-":
-        result = utils.subtract(numbers)
+        result = subtract(numbers)
     elif operator == "*":
-        result = utils.multiply(numbers)
+        result = multiply(numbers)
     elif operator == "/":
-        result = utils.divide(numbers[0], numbers[1])
+        result = divide(numbers[0], numbers[1])
 
     return result
 
